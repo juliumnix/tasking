@@ -18,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
         body: FutureBuilder(
       future: _controller.initializeFirebase(),
       builder: (context, snapshot) {
+        print(snapshot);
         if (snapshot.connectionState == ConnectionState.done) {
           return Container(
             color: const Color(0xFFFAEB78),
