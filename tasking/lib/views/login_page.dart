@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tasking/controllers/login_page_controller.dart';
+import 'package:tasking/widgets/custom_button.dart';
 import 'package:tasking/widgets/custom_input.dart';
 
 class LoginPage extends StatefulWidget {
@@ -42,6 +43,15 @@ class _LoginPageState extends State<LoginPage> {
                       setContent: (text) =>
                           _controller.usuario.setPassword(text),
                     ),
+                    Container(height: 36),
+                    CustomButton(
+                        title: "Entrar",
+                        onClick: () {
+                          _controller.signInUsingEmailPassword(
+                              email: _controller.usuario.getEmail(),
+                              password: _controller.usuario.getPassword(),
+                              context: context);
+                        }),
                   ],
                 ),
               ),
