@@ -1,40 +1,18 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="14.3.0">
-  <zoom_level>6</zoom_level>
+<diagram program="umlet" version="15.0.0">
+  <zoom_level>8</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>162</x>
-      <y>186</y>
-      <w>174</w>
-      <h>108</h>
-    </coordinates>
-    <panel_attributes>Usuario
---
-- email: String
-- password: String
-- instance: Usuario
---
-- Usuario()
-+ getInstance(): Usuario
-+ setEmail(email: String): void
-+ setPassword(password: String): void
-+ getEmail(): String
-+ getPassword: String</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>96</x>
-      <y>354</y>
-      <w>378</w>
-      <h>60</h>
+      <x>192</x>
+      <y>272</y>
+      <w>504</w>
+      <h>80</h>
     </coordinates>
     <panel_attributes>Login_Controller
 --
 --
-+ isLoading : ValueNotifier&lt;bool&gt; = false
++ isLoading : ValueNotifier&lt;bool&gt;
 + usuario : Usuario;
 + initializeFirebase() : Future&lt;FirebaseApp&gt;
 + signInUsingEmailPassword(email: String, password: String, context: BuildContext): Future&lt;User&gt;
@@ -44,10 +22,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>120</x>
-      <y>510</y>
-      <w>150</w>
-      <h>66</h>
+      <x>224</x>
+      <y>480</y>
+      <w>200</w>
+      <h>88</h>
     </coordinates>
     <panel_attributes>Login_page
 --
@@ -59,10 +37,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>24</x>
-      <y>642</y>
-      <w>312</w>
-      <h>138</h>
+      <x>96</x>
+      <y>656</y>
+      <w>416</w>
+      <h>184</h>
     </coordinates>
     <panel_attributes>Custom_input
 --
@@ -78,10 +56,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>228</x>
-      <y>288</y>
-      <w>18</w>
-      <h>78</h>
+      <x>368</x>
+      <y>184</y>
+      <w>24</w>
+      <h>104</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -89,10 +67,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>192</x>
-      <y>408</y>
-      <w>18</w>
-      <h>114</h>
+      <x>320</x>
+      <y>344</y>
+      <w>24</w>
+      <h>152</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
@@ -100,12 +78,65 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>186</x>
-      <y>570</y>
-      <w>18</w>
-      <h>84</h>
+      <x>312</x>
+      <y>560</y>
+      <w>24</w>
+      <h>112</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>232</x>
+      <y>0</y>
+      <w>304</w>
+      <h>192</h>
+    </coordinates>
+    <panel_attributes>Usuário
+--
+-nome: String
+-instancia: boolean
+-email: String
+-imagemPerfil: String
+--
+- Usuario()
++getNome():String
++setNome(nome: String): void
++getInstancia(): Usuário
++getEmail(): String
++setEmail(email: String): void
++getImagemPerfil(): String
++setImagemPerfil(imagem: String): void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>552</x>
+      <y>656</y>
+      <w>336</w>
+      <h>80</h>
+    </coordinates>
+    <panel_attributes>Custom_Button
+--
+- title: String
+- onClick: void
+--
++ CustomButton(title: String, onClick: void)
++ build(context: BuildContext): Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>416</x>
+      <y>520</y>
+      <w>320</w>
+      <h>152</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;10.0;380.0;10.0;380.0;170.0</additional_attributes>
   </element>
 </diagram>
