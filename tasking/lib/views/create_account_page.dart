@@ -1,20 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tasking/controllers/login_page_controller.dart';
-import 'package:tasking/widgets/custom_button.dart';
-import 'package:tasking/widgets/custom_input.dart';
-import 'package:flutter_svg/flutter_svg.dart';
+import 'package:tasking/controllers/create_account_controller.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+import '../controllers/login_page_controller.dart';
+import '../widgets/custom_button.dart';
+import '../widgets/custom_input.dart';
+
+class CreateAccount extends StatefulWidget {
+  const CreateAccount({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<CreateAccount> createState() => _CreateAccountState();
 }
 
-class _LoginPageState extends State<LoginPage> {
-  final LoginController _controller = LoginController();
-
+class _CreateAccountState extends State<CreateAccount> {
+  final CreateAccountController _controller = CreateAccountController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -31,15 +31,11 @@ class _LoginPageState extends State<LoginPage> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    Center(
-                        child: SizedBox(
-                            height: MediaQuery.of(context).size.height * 0.3,
-                            width: MediaQuery.of(context).size.width,
-                            child: Image.asset("assets/tasking-logo.png"))),
                     CustomInput(
                       hintText: "mateus@email.com",
                       title: "Login",
-                      setContent: (text) => _controller.usuario.setEmail(text),
+                      setContent: (text) =>
+                          {_controller.usuario.setEmail(text)},
                     ),
                     Container(height: 10),
                     CustomInput(
@@ -47,42 +43,25 @@ class _LoginPageState extends State<LoginPage> {
                       title: "Senha",
                       isPassword: true,
                       setContent: (text) =>
-                          _controller.usuario.setPassword(text),
+                          {_controller.usuario.setPassword(text)},
                     ),
                     Container(height: 36),
                     CustomButton(
-                        title: "Entrar",
+                        title: "Criar",
                         onClick: () {
-                          _controller.signInUsingEmailPassword(
+                          _controller.signUpUsingEmailPassword(
                               email: _controller.usuario.getEmail(),
                               password: _controller.usuario.getPassword(),
                               context: context);
                         }),
                     Container(height: 10),
                     Center(
-                        child: Text(
-                      "Ou",
-                      style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 16,
-                          fontFamily: GoogleFonts.comfortaa().fontFamily),
-                    )),
-                    Container(height: 10),
-                    //TO-DO fazer botão do google e colocar a função
-                    CustomButton(
-                        title: "google",
-                        onClick: () {
-                          _controller.handleSignIn();
-                        }),
-                    Container(height: 10),
-                    Center(
                         child: GestureDetector(
                             onTap: () {
-                              Navigator.pushReplacementNamed(
-                                  context, "/createAccount");
+                              _controller.navigationBack(context);
                             },
                             child: Text(
-                              "Não tem uma conta? Crie uma aqui",
+                              "Já possui uma conta? Fazer login",
                               style: TextStyle(
                                   color: Colors.white,
                                   fontSize: 10,
