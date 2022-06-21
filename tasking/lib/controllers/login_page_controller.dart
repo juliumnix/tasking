@@ -14,12 +14,16 @@ class LoginController {
     return firebaseApp;
   }
 
-  Future<void> handleSignIn() async {
+  Future<void> handleSignIn(BuildContext context) async {
     try {
       GoogleSignInAccount? usuario = await GoogleSignIn().signIn();
       print(usuario);
     } catch (error) {
-      print(error);
+      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+          behavior: SnackBarBehavior.floating,
+          backgroundColor: Colors.red,
+          duration: Duration(seconds: 2),
+          content: Text('Email incorreto')));
     }
   }
 

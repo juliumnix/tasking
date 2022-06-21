@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tasking/views/create_account_page.dart';
 import 'package:tasking/views/login_page.dart';
+import 'package:tasking/views/teste_page.dart';
 
 void main() {
   runApp(const MyApp());
@@ -20,6 +21,7 @@ class MyApp extends StatelessWidget {
       initialRoute: "/",
       routes: {
         "/": (context) => const LoginPage(),
+        "/teste": (context) => const TestePage(),
         "/createAccount": (context) => const CreateAccount(),
       },
     );
