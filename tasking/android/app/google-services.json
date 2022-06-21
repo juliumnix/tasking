@@ -7,12 +7,20 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:381908167424:android:14a31058c74f2a10b4e1e5",
+        "mobilesdk_app_id": "1:381908167424:android:e6b49de66ebc70bdb4e1e5",
         "android_client_info": {
           "package_name": "com.example.tasking"
         }
       },
       "oauth_client": [
+        {
+          "client_id": "381908167424-uhuiqvluapi7gvvfuee9rsa8a7hfp01r.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.tasking",
+            "certificate_hash": "e283ea2033fc638504b56785712d885c68059de7"
+          }
+        },
         {
           "client_id": "381908167424-roi77keth8lfivlui7l2a141q887aplf.apps.googleusercontent.com",
           "client_type": 3
@@ -29,6 +37,13 @@
             {
               "client_id": "381908167424-roi77keth8lfivlui7l2a141q887aplf.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "381908167424-7e4k7sgu7g42i4o9slig6bs4rjh428d3.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.tasking"
+              }
             }
           ]
         }
