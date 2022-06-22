@@ -19,11 +19,7 @@ class LoginController {
       GoogleSignInAccount? usuario = await GoogleSignIn().signIn();
       print(usuario);
     } catch (error) {
-      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          behavior: SnackBarBehavior.floating,
-          backgroundColor: Colors.red,
-          duration: Duration(seconds: 2),
-          content: Text('Email incorreto')));
+      print(error);
     }
   }
 
@@ -45,8 +41,18 @@ class LoginController {
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            behavior: SnackBarBehavior.floating,
+            backgroundColor: Colors.red,
+            duration: Duration(seconds: 2),
+            content: Text('Email não cadastrado no sistema')));
       } else if (e.code == 'wrong-password') {
         print('Wrong password provided.');
+        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+            behavior: SnackBarBehavior.floating,
+            backgroundColor: Colors.red,
+            duration: Duration(seconds: 2),
+            content: Text('Senha incorreta')));
       }
     }
     isLoading.value = false;

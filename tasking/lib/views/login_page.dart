@@ -21,7 +21,6 @@ class _LoginPageState extends State<LoginPage> {
         body: FutureBuilder(
       future: _controller.initializeFirebase(),
       builder: (context, snapshot) {
-        print(snapshot);
         if (snapshot.connectionState == ConnectionState.done) {
           return SingleChildScrollView(
             child: Container(
@@ -58,6 +57,7 @@ class _LoginPageState extends State<LoginPage> {
                       CustomButton(
                           title: "Entrar",
                           onClick: () {
+                            print("cloicou");
                             _controller.signInUsingEmailPassword(
                                 email: _controller.usuario.getEmail(),
                                 password: _controller.usuario.getPassword(),
@@ -77,11 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                       CustomButton(
                           title: "google",
                           onClick: () {
-                            try {
-                              _controller.handleSignIn(context);
-                            } catch (e) {
-                              print("cu");
-                            }
+                            _controller.handleSignIn(context);
                           }),
                       Container(height: 10),
                       Center(
