@@ -17,14 +17,13 @@ class CustomButton extends StatelessWidget {
         },
         style: ButtonStyle(
             side: MaterialStateProperty.all(const BorderSide(
-                width: 5.0,
-                color: Color(0xFFF4D745),
-                style: BorderStyle.solid)),
+                width: 5, color: Color(0xFFF4D745), style: BorderStyle.solid)),
             shape: MaterialStateProperty.all(RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(10.0))),
+                borderRadius: BorderRadius.circular(10))),
             backgroundColor: MaterialStateProperty.all(Color(0xFFFFFFAB)),
-            minimumSize: MaterialStateProperty.all(
-                Size(MediaQuery.of(context).size.width * 0.7, 50))),
+            minimumSize: MaterialStateProperty.all(Size(
+                (MediaQuery.of(context).size.width * 0.6945),
+                (MediaQuery.of(context).size.height * 0.0556)))),
         child: Text(
           title,
           style: TextStyle(

@@ -37,7 +37,8 @@ class _CreateAccountState extends State<CreateAccount> {
                       setContent: (text) =>
                           {_controller.usuario.setEmail(text)},
                     ),
-                    Container(height: 10),
+                    Container(
+                        height: MediaQuery.of(context).size.height * 0.01),
                     CustomInput(
                       hintText: "********",
                       title: "Senha",
@@ -45,7 +46,8 @@ class _CreateAccountState extends State<CreateAccount> {
                       setContent: (text) =>
                           {_controller.usuario.setPassword(text)},
                     ),
-                    Container(height: 36),
+                    Container(
+                        height: MediaQuery.of(context).size.height * 0.034),
                     CustomButton(
                         title: "Criar",
                         onClick: () {
@@ -54,7 +56,8 @@ class _CreateAccountState extends State<CreateAccount> {
                               password: _controller.usuario.getPassword(),
                               context: context);
                         }),
-                    Container(height: 10),
+                    Container(
+                        height: MediaQuery.of(context).size.height * 0.008),
                     Center(
                         child: GestureDetector(
                             onTap: () {

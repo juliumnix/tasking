@@ -21,13 +21,19 @@ class CustomInput extends StatelessWidget {
       children: [
         Text(title,
             style: GoogleFonts.comfortaa(fontSize: 20, color: Colors.white)),
-        Container(height: 5),
+        Container(height: (MediaQuery.of(context).size.height) * 0.006),
         TextField(
           onChanged: (value) {
             setContent(value);
           },
           obscureText: isPassword ?? false,
           decoration: InputDecoration(
+            isDense: true,
+            contentPadding: EdgeInsets.fromLTRB(
+                ((MediaQuery.of(context).size.width) * 0.0194),
+                ((MediaQuery.of(context).size.height) * 0.0134),
+                ((MediaQuery.of(context).size.width) * 0.0194),
+                ((MediaQuery.of(context).size.height) * 0.0134)),
             enabledBorder: OutlineInputBorder(
               borderSide: const BorderSide(color: Colors.grey, width: 2.0),
               borderRadius: BorderRadius.circular(10.0),
@@ -39,6 +45,7 @@ class CustomInput extends StatelessWidget {
             filled: true,
             hintStyle: TextStyle(
               color: const Color(0xFFD4DBC6),
+              fontSize: 10,
               fontFamily: GoogleFonts.comfortaa().fontFamily,
             ),
             hintText: hintText,

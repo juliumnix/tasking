@@ -45,7 +45,8 @@ class _LoginPageState extends State<LoginPage> {
                         setContent: (text) =>
                             _controller.usuario.setEmail(text),
                       ),
-                      Container(height: 10),
+                      Container(
+                          height: MediaQuery.of(context).size.height * 0.01),
                       CustomInput(
                         hintText: "********",
                         title: "Senha",
@@ -53,17 +54,18 @@ class _LoginPageState extends State<LoginPage> {
                         setContent: (text) =>
                             _controller.usuario.setPassword(text),
                       ),
-                      Container(height: 36),
+                      Container(
+                          height: (MediaQuery.of(context).size.height * 0.034)),
                       CustomButton(
                           title: "Entrar",
                           onClick: () {
-                            print("cloicou");
                             _controller.signInUsingEmailPassword(
                                 email: _controller.usuario.getEmail(),
                                 password: _controller.usuario.getPassword(),
                                 context: context);
                           }),
-                      Container(height: 10),
+                      Container(
+                          height: MediaQuery.of(context).size.height * 0.008),
                       Center(
                           child: Text(
                         "Ou",
@@ -72,14 +74,16 @@ class _LoginPageState extends State<LoginPage> {
                             fontSize: 16,
                             fontFamily: GoogleFonts.comfortaa().fontFamily),
                       )),
-                      Container(height: 10),
+                      Container(
+                          height: MediaQuery.of(context).size.height * 0.008),
                       //TO-DO fazer botão do google e colocar a função
                       CustomButton(
                           title: "google",
                           onClick: () {
                             _controller.handleSignIn(context);
                           }),
-                      Container(height: 10),
+                      Container(
+                          height: MediaQuery.of(context).size.height * 0.007),
                       Center(
                           child: GestureDetector(
                               onTap: () {
