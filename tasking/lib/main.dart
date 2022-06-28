@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:tasking/views/create_account_page.dart';
+import 'package:tasking/views/enter_group_page.dart';
+import 'package:tasking/views/create_group_page.dart';
 import 'package:tasking/views/login_page.dart';
 import 'package:tasking/views/teste_page.dart';
 
@@ -23,6 +25,8 @@ class MyApp extends StatelessWidget {
         "/": (context) => const LoginPage(),
         "/teste": (context) => const TestePage(),
         "/createAccount": (context) => const CreateAccount(),
+        "/enterGroup": (context) => const EnterGroupPage(),
+        "/createGroup": (context) => const CreateGroupPage(),
       },
     );
   }
