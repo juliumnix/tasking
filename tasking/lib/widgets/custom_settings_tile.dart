@@ -4,13 +4,13 @@ import 'package:google_fonts/google_fonts.dart';
 class CustomSettingsTile extends StatelessWidget {
   final String title;
   final bool isInteractive;
-  final void Function() onClick;
+  final void Function()? onClick;
 
   const CustomSettingsTile(
       {Key? key,
       required this.title,
       required this.isInteractive,
-      required this.onClick})
+      this.onClick})
       : super(key: key);
 
   @override
@@ -43,7 +43,11 @@ class CustomSettingsTile extends StatelessWidget {
                               fontSize: 16,
                               fontFamily: GoogleFonts.comfortaa().fontFamily),
                         ),
-                        onTap: () => onClick,
+                        onTap: () => isInteractive
+                            ? onClick != null
+                                ? onClick!()
+                                : {}
+                            : {},
                         trailing: Icon(Icons.arrow_forward_ios),
                       )
                     : ListTile(

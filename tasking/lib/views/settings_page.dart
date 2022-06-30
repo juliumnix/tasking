@@ -45,7 +45,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 width: MediaQuery.of(context).size.width * 0.889,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.only(
+                  borderRadius: const BorderRadius.only(
                     topLeft: Radius.circular(22.5),
                     topRight: Radius.circular(22.5),
                   ),
@@ -116,7 +116,7 @@ class _SettingsPageState extends State<SettingsPage> {
                         onTap: () {
                           print("Clicou em sair");
                         },
-                        child: new Text(
+                        child: Text(
                           "Sair",
                           style: TextStyle(
                               color: const Color((0xFFFF0000)),

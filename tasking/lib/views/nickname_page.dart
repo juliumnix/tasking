@@ -11,7 +11,7 @@ class NicknamePage extends StatefulWidget {
 }
 
 class _NicknamePageState extends State<NicknamePage> {
-  final String _apelido = "";
+  String _apelido = "";
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +47,7 @@ class _NicknamePageState extends State<NicknamePage> {
                 child: CustomInputBlack(
                   hintText: "Mateus Nosse",
                   title: "Novo apelido:",
-                  setContent: (text) => _apelido,
+                  setContent: (text) => _apelido = text,
                 ),
               ),
               Container(

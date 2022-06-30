@@ -56,12 +56,10 @@ class _GroupPageState extends State<GroupPage> {
                             fontFamily: GoogleFonts.comfortaa().fontFamily),
                       ),
                     ),
-                    CustomSettingsTile(
-                        title: "Casa dos Nosse",
-                        isInteractive: false,
-                        onClick: () {
-                          print("Clicou em casa dos Nosse");
-                        }),
+                    const CustomSettingsTile(
+                      title: "Casa dos Nosse",
+                      isInteractive: false,
+                    ),
                     Container(
                       alignment: Alignment.centerLeft,
                       margin: EdgeInsets.only(
