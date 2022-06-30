@@ -2,10 +2,19 @@ import 'package:flutter/material.dart';
 import 'package:tasking/views/create_account_page.dart';
 import 'package:tasking/views/enter_group_page.dart';
 import 'package:tasking/views/create_group_page.dart';
+
+import 'package:tasking/views/favorite_color_page.dart';
+import 'package:tasking/views/group_page.dart';
+
 import 'package:tasking/views/home_page_today.dart';
 import 'package:tasking/views/home_page_tomorrow.dart';
 import 'package:tasking/views/home_page_yesterday.dart';
+
 import 'package:tasking/views/login_page.dart';
+import 'package:tasking/views/nickname_page.dart';
+import 'package:tasking/views/profile_page.dart';
+import 'package:tasking/views/settings_page.dart';
+import 'package:tasking/views/task_page.dart';
 import 'package:tasking/views/teste_page.dart';
 
 void main() {
@@ -30,6 +39,12 @@ class MyApp extends StatelessWidget {
         "/createAccount": (context) => const CreateAccount(),
         "/enterGroup": (context) => const EnterGroupPage(),
         "/createGroup": (context) => const CreateGroupPage(),
+        "/settings": (context) => const SettingsPage(),
+        "/nickname": (context) => const NicknamePage(),
+        "/favoriteColor": (context) => const FavoriteColorPage(),
+        "/task": (context) => const TaskPage(),
+        "/profile": (context) => const ProfilePage(),
+        "/groupSelect": (context) => const GroupPage(),
         "/homePageToday": (context) => const HomePageToday(),
         "/homePageyesterday": (context) => const HomePageYesterday(),
         "/homePageTomorrow": (context) => const HomePageTomorrow()
