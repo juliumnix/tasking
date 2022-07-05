@@ -26,7 +26,11 @@ class _FavoriteColorPageState extends State<FavoriteColorPage> {
             children: [
               Row(
                 children: [
-                  Icon(Icons.arrow_back_ios),
+                  GestureDetector(
+                      onTap: () => {
+                            Navigator.pushReplacementNamed(context, "/settings")
+                          },
+                      child: Icon(Icons.arrow_back_ios)),
                   Container(
                     padding: EdgeInsets.only(
                         left: ((MediaQuery.of(context).size.width) * 0.047)),

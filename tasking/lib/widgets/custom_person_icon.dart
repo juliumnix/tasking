@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomPersonTile extends StatelessWidget {
+class CustomPersonIcon extends StatelessWidget {
   final String letter;
   final double width;
   final double height;
   final String hexCode;
   final double fontSize;
 
-  const CustomPersonTile({
+  const CustomPersonIcon({
     Key? key,
     required this.letter,
     required this.width,

@@ -7,6 +7,8 @@ class CustomTile extends StatefulWidget {
   final double hours;
   final String url;
   final bool? isComplete;
+  final double verticalPadding;
+  final double horizontalPadding;
   final Function onPressedActivate;
   final Function onPressedDesactivate;
   const CustomTile({
@@ -16,6 +18,8 @@ class CustomTile extends StatefulWidget {
     required this.hours,
     required this.url,
     this.isComplete,
+    required this.verticalPadding,
+    required this.horizontalPadding,
     required this.onPressedActivate,
     required this.onPressedDesactivate,
   }) : super(key: key);
@@ -30,23 +34,34 @@ class _CustomTileState extends State<CustomTile> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: EdgeInsets.symmetric(
+          horizontal: widget.horizontalPadding,
+          vertical: widget.verticalPadding),
       child: Container(
         decoration: BoxDecoration(
-          border: Border.all(color: Colors.grey, width: 3),
+          borderRadius: BorderRadius.all(
+            Radius.circular((MediaQuery.of(context).size.width) * 0.062),
+          ),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.grey.withOpacity(0.2),
+              spreadRadius: 2,
+              blurRadius: 2, // changes position of shadow
+            ),
+          ],
           color: widget.isComplete != null
               ? widget.isComplete!
                   ? Colors.green
                   : Colors.red
               : Colors.white,
-          borderRadius: const BorderRadius.all(Radius.circular(30)),
         ),
-        height: 100,
-        width: MediaQuery.of(context).size.width,
+        height: ((MediaQuery.of(context).size.height) * 0.128),
+        width: ((MediaQuery.of(context).size.width) * 0.833),
         child: Row(
           children: [
             Padding(
-              padding: const EdgeInsets.all(11.0),
+              padding:
+                  EdgeInsets.all(((MediaQuery.of(context).size.width) * 0.027)),
               child: Container(
                 decoration: BoxDecoration(
                   border: Border.all(color: Colors.black, width: 3),
@@ -115,7 +130,6 @@ class _CustomTileState extends State<CustomTile> {
                                   } else {
                                     widget.onPressedActivate();
                                   }
-
                                   setState(() {
                                     _isPressed = !_isPressed;
                                   });
