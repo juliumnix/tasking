@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tasking/widgets/custom_button_status.dart';
 import 'package:tasking/widgets/custom_input_resizable.dart';
 import 'package:tasking/widgets/custom_tile_person.dart';
 
@@ -118,7 +119,12 @@ class _TaskPageState extends State<TaskPage> {
                       ),
                     ),
                     Container(
-                        height: (MediaQuery.of(context).size.height) * 0.02),
+                      // height: (MediaQuery.of(context).size.height) * 0.02,
+                      child: Padding(
+                        padding: const EdgeInsets.only(top: 15),
+                        child: CustomButtonStatus(title: "Teste"),
+                      ),
+                    ),
                   ],
                 ),
               ),
