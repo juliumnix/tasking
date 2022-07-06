@@ -69,24 +69,44 @@ class _CustomTopNavigatorState extends State<CustomTopNavigator> {
               widget.onPressWesterday();
             },
             child: Container(
-                height: _hoverFirst ? 60 : 55,
+                height: _hoverFirst
+                    ? ((MediaQuery.of(context).size.height) * 0.051)
+                    : ((MediaQuery.of(context).size.height) * 0.044),
                 decoration: _hoverFirst
                     ? BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 1),
-                        borderRadius: const BorderRadius.only(
-                            topRight: Radius.circular(10),
-                            topLeft: Radius.circular(10)),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(
+                              ((MediaQuery.of(context).size.width) * 0.027)),
+                          topRight: Radius.circular(
+                              ((MediaQuery.of(context).size.width) * 0.027)),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 2,
+                            blurRadius: 2, // changes position of shadow
+                          ),
+                        ],
                         color: _hoverFirst
-                            ? const Color(0xFFFAEB78)
+                            ? const Color(0xFFFFFFAB)
                             : const Color.fromARGB(255, 252, 239, 142),
                       )
                     : BoxDecoration(
-                        borderRadius: const BorderRadius.only(
-                            topRight: Radius.circular(10),
-                            topLeft: Radius.circular(10)),
-                        border: Border.all(color: Colors.grey, width: 1),
+                        borderRadius: BorderRadius.only(
+                          topLeft: Radius.circular(
+                              ((MediaQuery.of(context).size.width) * 0.027)),
+                          topRight: Radius.circular(
+                              ((MediaQuery.of(context).size.width) * 0.027)),
+                        ),
+                        boxShadow: [
+                          BoxShadow(
+                            color: Colors.grey.withOpacity(0.2),
+                            spreadRadius: 2,
+                            blurRadius: 2, // changes position of shadow
+                          ),
+                        ],
                         color: _hoverFirst
-                            ? const Color(0xFFFAEB78)
+                            ? const Color(0xFFFFFFAB)
                             : Colors.white,
                       ),
                 width: MediaQuery.of(context).size.width / 4,
@@ -94,7 +114,7 @@ class _CustomTopNavigatorState extends State<CustomTopNavigator> {
                     child: Text("Ontem",
                         style: TextStyle(
                             color: Color(0xFFF4D745),
-                            fontSize: 20,
+                            fontSize: _hoverFirst ? 18 : 16,
                             fontFamily: GoogleFonts.comfortaa().fontFamily)))),
           ),
         ),
@@ -114,22 +134,42 @@ class _CustomTopNavigatorState extends State<CustomTopNavigator> {
               widget.onPressToday();
             },
             child: Container(
-              height: _hoverSecond ? 60 : 55,
+              height: _hoverSecond
+                  ? ((MediaQuery.of(context).size.height) * 0.051)
+                  : ((MediaQuery.of(context).size.height) * 0.044),
               decoration: _hoverSecond
                   ? BoxDecoration(
-                      border: Border.all(color: Colors.grey, width: 1),
-                      borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(10),
-                          topLeft: Radius.circular(10)),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.027)),
+                        topRight: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.027)),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 2, // changes position of shadow
+                        ),
+                      ],
                       color: _hoverSecond
-                          ? const Color(0xFFFAEB78)
+                          ? const Color(0xFFFFFFAB)
                           : const Color.fromARGB(255, 252, 239, 142),
                     )
                   : BoxDecoration(
-                      border: Border.all(color: Colors.grey, width: 1),
-                      borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(10),
-                          topLeft: Radius.circular(10)),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.027)),
+                        topRight: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.027)),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 2, // changes position of shadow
+                        ),
+                      ],
                       color:
                           _hoverSecond ? const Color(0xFFFFFFAB) : Colors.white,
                     ),
@@ -139,7 +179,7 @@ class _CustomTopNavigatorState extends State<CustomTopNavigator> {
                 "Hoje",
                 style: TextStyle(
                     color: Color(0xFFF4D745),
-                    fontSize: 20,
+                    fontSize: _hoverSecond ? 18 : 16,
                     fontFamily: GoogleFonts.comfortaa().fontFamily),
               )),
             ),
@@ -161,31 +201,51 @@ class _CustomTopNavigatorState extends State<CustomTopNavigator> {
               widget.onPressTomorrow();
             },
             child: Container(
-              height: _hoverThird ? 60 : 55,
+              height: _hoverThird
+                  ? ((MediaQuery.of(context).size.height) * 0.051)
+                  : ((MediaQuery.of(context).size.height) * 0.044),
               decoration: _hoverThird
                   ? BoxDecoration(
-                      border: Border.all(color: Colors.grey, width: 1),
-                      borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(10),
-                          topLeft: Radius.circular(10)),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.027)),
+                        topRight: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.027)),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 2, // changes position of shadow
+                        ),
+                      ],
                       color: _hoverThird
-                          ? const Color(0xFFFAEB78)
+                          ? const Color(0xFFFFFFAB)
                           : const Color.fromARGB(255, 252, 239, 142),
                     )
                   : BoxDecoration(
-                      border: Border.all(color: Colors.grey, width: 1),
-                      borderRadius: const BorderRadius.only(
-                          topRight: Radius.circular(10),
-                          topLeft: Radius.circular(10)),
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.027)),
+                        topRight: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.027)),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 2, // changes position of shadow
+                        ),
+                      ],
                       color:
-                          _hoverThird ? const Color(0xFFFAEB78) : Colors.white,
+                          _hoverThird ? const Color(0xFFFFFFAB) : Colors.white,
                     ),
               width: MediaQuery.of(context).size.width / 4,
               child: Center(
                 child: Text("Amanhã",
                     style: TextStyle(
                         color: Color(0xFFF4D745),
-                        fontSize: 20,
+                        fontSize: _hoverThird ? 18 : 16,
                         fontFamily: GoogleFonts.comfortaa().fontFamily)),
               ),
             ),

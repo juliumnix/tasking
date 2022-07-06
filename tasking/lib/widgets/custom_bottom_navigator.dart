@@ -88,6 +88,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 _hoverSecond = true;
                 _hoverThird = false;
               });
+              Navigator.pushReplacementNamed(context, "/homePageToday");
             },
             onTapDown: (_) {},
             onTapCancel: () {},
@@ -131,6 +132,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 _hoverSecond = false;
                 _hoverThird = true;
               });
+              Navigator.pushReplacementNamed(context, "/settings");
             },
             onTapDown: (_) {},
             onTapCancel: () {},

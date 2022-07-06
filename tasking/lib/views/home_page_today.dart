@@ -81,11 +81,16 @@ class _HomePageTodayState extends State<HomePageToday> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: Column(
-      children: [
-        Expanded(
-          child: Padding(
-            padding: const EdgeInsets.only(left: 20, right: 20, top: 60),
+      body: Stack(
+        alignment: Alignment.bottomCenter,
+        children: [
+          Container(
+            padding: EdgeInsets.only(
+                left: ((MediaQuery.of(context).size.width) * 0.055),
+                right: ((MediaQuery.of(context).size.width) * 0.055),
+                top: ((MediaQuery.of(context).size.height) * 0.058)),
+            margin: EdgeInsets.only(
+                bottom: (MediaQuery.of(context).size.height * 0.07)),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.center,
               mainAxisAlignment: MainAxisAlignment.center,
@@ -101,15 +106,27 @@ class _HomePageTodayState extends State<HomePageToday> {
                 Expanded(
                   child: Container(
                     decoration: BoxDecoration(
-                        border: Border.all(color: Colors.grey, width: 3),
-                        borderRadius: const BorderRadius.only(
-                            topLeft: Radius.circular(30),
-                            topRight: Radius.circular(30))),
+                      color: Colors.white,
+                      borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.062)),
+                        topRight: Radius.circular(
+                            ((MediaQuery.of(context).size.width) * 0.062)),
+                      ),
+                      boxShadow: [
+                        BoxShadow(
+                          color: Colors.grey.withOpacity(0.2),
+                          spreadRadius: 2,
+                          blurRadius: 2, // changes position of shadow
+                        ),
+                      ],
+                    ),
                     child: MediaQuery.removePadding(
                       context: context,
                       removeTop: true,
                       child: Padding(
-                        padding: const EdgeInsets.only(top: 10),
+                        padding: EdgeInsets.only(
+                            top: ((MediaQuery.of(context).size.width) * 0.027)),
                         child: Column(
                           children: [
                             Text(
@@ -124,6 +141,12 @@ class _HomePageTodayState extends State<HomePageToday> {
                                 itemCount: usuarios.length,
                                 itemBuilder: (context, index) {
                                   return CustomTile(
+                                      verticalPadding:
+                                          ((MediaQuery.of(context).size.width) *
+                                              0.027),
+                                      horizontalPadding:
+                                          ((MediaQuery.of(context).size.width) *
+                                              0.027),
                                       onPressedActivate: () {
                                         setState(() {
                                           _numeroDeTarefas -= 1;
@@ -151,9 +174,9 @@ class _HomePageTodayState extends State<HomePageToday> {
               ],
             ),
           ),
-        ),
-        const CustomBottomNavigationBar(),
-      ],
-    ));
+          const CustomBottomNavigationBar(),
+        ],
+      ),
+    );
   }
 }

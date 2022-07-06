@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tasking/widgets/custom_button.dart';
 import 'package:tasking/widgets/custom_input_black.dart';
-import 'package:tasking/widgets/custom_person_tile.dart';
+import 'package:tasking/widgets/custom_person_icon.dart';
 
 class ProfilePage extends StatefulWidget {
   const ProfilePage({Key? key}) : super(key: key);
@@ -25,7 +25,11 @@ class _ProfilePageState extends State<ProfilePage> {
             children: [
               Row(
                 children: [
-                  Icon(Icons.arrow_back_ios),
+                  GestureDetector(
+                      onTap: () => {
+                            Navigator.pushReplacementNamed(context, "/settings")
+                          },
+                      child: Icon(Icons.arrow_back_ios)),
                   Container(
                     padding: EdgeInsets.only(
                         left: ((MediaQuery.of(context).size.width) * 0.047)),
@@ -43,7 +47,7 @@ class _ProfilePageState extends State<ProfilePage> {
                 margin: EdgeInsets.only(
                     top: (MediaQuery.of(context).size.height * 0.026),
                     bottom: (MediaQuery.of(context).size.height * 0.016)),
-                child: CustomPersonTile(
+                child: CustomPersonIcon(
                     letter: "M",
                     width: ((MediaQuery.of(context).size.width) * 0.416),
                     height: ((MediaQuery.of(context).size.width) * 0.416),
