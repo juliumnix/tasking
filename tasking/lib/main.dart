@@ -12,6 +12,7 @@ import 'package:tasking/views/home_page_yesterday.dart';
 
 import 'package:tasking/views/login_page.dart';
 import 'package:tasking/views/nickname_page.dart';
+import 'package:tasking/views/participant_page.dart';
 import 'package:tasking/views/profile_page.dart';
 import 'package:tasking/views/settings_page.dart';
 import 'package:tasking/views/task_page.dart';
@@ -32,7 +33,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      initialRoute: "/task",
+      initialRoute: "/",
       routes: {
         "/": (context) => const LoginPage(),
         "/teste": (context) => const TestePage(),
@@ -47,7 +48,8 @@ class MyApp extends StatelessWidget {
         "/groupSelect": (context) => const GroupPage(),
         "/homePageToday": (context) => const HomePageToday(),
         "/homePageyesterday": (context) => const HomePageYesterday(),
-        "/homePageTomorrow": (context) => const HomePageTomorrow()
+        "/homePageTomorrow": (context) => const HomePageTomorrow(),
+        "/participantPage": (context) => const ParticipantPage()
       },
     );
   }

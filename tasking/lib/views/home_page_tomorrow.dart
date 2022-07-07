@@ -169,7 +169,9 @@ class _HomePageTomorrowState extends State<HomePageTomorrow> {
             ],
           ),
         ),
-        const CustomBottomNavigationBar(),
+        const CustomBottomNavigationBar(
+          valorRecebido: 2,
+        ),
       ],
     ));
   }

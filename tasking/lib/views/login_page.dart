@@ -59,10 +59,12 @@ class _LoginPageState extends State<LoginPage> {
                       CustomButton(
                           title: "Entrar",
                           onClick: () {
-                            _controller.signInUsingEmailPassword(
-                                email: _controller.usuario.getEmail(),
-                                password: _controller.usuario.getPassword(),
-                                context: context);
+                            // _controller.signInUsingEmailPassword(
+                            //     email: _controller.usuario.getEmail(),
+                            //     password: _controller.usuario.getPassword(),
+                            //     context: context);
+                            Navigator.pushReplacementNamed(
+                                context, "/homePageToday");
                           }),
                       Container(
                           height: MediaQuery.of(context).size.height * 0.008),

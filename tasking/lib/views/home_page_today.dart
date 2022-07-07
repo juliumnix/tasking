@@ -174,7 +174,9 @@ class _HomePageTodayState extends State<HomePageToday> {
               ],
             ),
           ),
-          const CustomBottomNavigationBar(),
+          const CustomBottomNavigationBar(
+            valorRecebido: 2,
+          ),
         ],
       ),
     );

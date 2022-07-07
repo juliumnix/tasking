@@ -12,7 +12,10 @@ class _TestePageState extends State<TestePage> {
   @override
   Widget build(BuildContext context) {
     return const Scaffold(
-      body: Center(child: CustomBottomNavigationBar()),
+      body: Center(
+          child: CustomBottomNavigationBar(
+        valorRecebido: 1,
+      )),
     );
   }
 }

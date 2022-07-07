@@ -147,7 +147,9 @@ class _SettingsPageState extends State<SettingsPage> {
                     ]),
                   ),
                 ),
-                const CustomBottomNavigationBar(),
+                const CustomBottomNavigationBar(
+                  valorRecebido: 3,
+                ),
               ],
             ),
           ],

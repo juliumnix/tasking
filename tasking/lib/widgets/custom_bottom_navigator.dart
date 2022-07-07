@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
 class CustomBottomNavigationBar extends StatefulWidget {
-  const CustomBottomNavigationBar({Key? key}) : super(key: key);
+  final int valorRecebido;
+  const CustomBottomNavigationBar({Key? key, required this.valorRecebido})
+      : super(key: key);
 
   @override
   State<CustomBottomNavigationBar> createState() =>
@@ -13,13 +15,27 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
   bool _hoverSecond = false;
   bool _hoverThird = false;
 
-  void _initialState() {
-    _hoverSecond = true;
+  void _initialState(int valor) {
+    if (valor == 1) {
+      _hoverFirst = true;
+      _hoverSecond = false;
+      _hoverThird = false;
+    }
+    if (valor == 2) {
+      _hoverFirst = false;
+      _hoverSecond = true;
+      _hoverThird = false;
+    }
+    if (valor == 3) {
+      _hoverFirst = false;
+      _hoverSecond = false;
+      _hoverThird = true;
+    }
   }
 
   @override
   void initState() {
-    _initialState();
+    _initialState(widget.valorRecebido);
     super.initState();
   }
 
@@ -42,6 +58,7 @@ class _CustomBottomNavigationBarState extends State<CustomBottomNavigationBar> {
                 _hoverSecond = false;
                 _hoverThird = false;
               });
+              Navigator.pushReplacementNamed(context, "/participantPage");
             },
             onTapDown: (_) {},
             onTapCancel: () {},
