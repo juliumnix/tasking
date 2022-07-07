@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<diagram program="umlet" version="15.0.0">
-  <zoom_level>8</zoom_level>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>2</zoom_level>
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>192</x>
-      <y>272</y>
-      <w>504</w>
-      <h>80</h>
+      <x>1044</x>
+      <y>432</y>
+      <w>126</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>Login_Controller
 --
@@ -22,25 +22,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>224</x>
-      <y>480</y>
-      <w>200</w>
-      <h>88</h>
-    </coordinates>
-    <panel_attributes>Login_page
---
-- controller: LoginController
---
-+ build(context: BuildContext) : Widget</panel_attributes>
-    <additional_attributes/>
-  </element>
-  <element>
-    <id>UMLClass</id>
-    <coordinates>
-      <x>96</x>
-      <y>656</y>
-      <w>416</w>
-      <h>184</h>
+      <x>1020</x>
+      <y>528</y>
+      <w>104</w>
+      <h>46</h>
     </coordinates>
     <panel_attributes>Custom_input
 --
@@ -56,10 +41,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>368</x>
-      <y>184</y>
-      <w>24</w>
-      <h>104</h>
+      <x>1088</x>
+      <y>410</y>
+      <w>6</w>
+      <h>26</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;110.0</additional_attributes>
@@ -67,10 +52,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>320</x>
-      <y>344</y>
-      <w>24</w>
-      <h>152</h>
+      <x>1076</x>
+      <y>450</y>
+      <w>6</w>
+      <h>38</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;170.0</additional_attributes>
@@ -78,10 +63,10 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>312</x>
-      <y>560</y>
-      <w>24</w>
-      <h>112</h>
+      <x>1074</x>
+      <y>504</y>
+      <w>6</w>
+      <h>28</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;10.0;120.0</additional_attributes>
@@ -89,10 +74,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>232</x>
-      <y>0</y>
-      <w>304</w>
-      <h>192</h>
+      <x>1054</x>
+      <y>364</y>
+      <w>76</w>
+      <h>48</h>
     </coordinates>
     <panel_attributes>Usuário
 --
@@ -114,10 +99,10 @@
   <element>
     <id>UMLClass</id>
     <coordinates>
-      <x>552</x>
-      <y>656</y>
-      <w>336</w>
-      <h>80</h>
+      <x>1134</x>
+      <y>528</y>
+      <w>84</w>
+      <h>20</h>
     </coordinates>
     <panel_attributes>Custom_Button
 --
@@ -131,12 +116,547 @@
   <element>
     <id>Relation</id>
     <coordinates>
-      <x>416</x>
-      <y>520</y>
-      <w>320</w>
-      <h>152</h>
+      <x>1100</x>
+      <y>494</y>
+      <w>80</w>
+      <h>38</h>
     </coordinates>
     <panel_attributes>lt=-</panel_attributes>
     <additional_attributes>10.0;10.0;380.0;10.0;380.0;170.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>482</y>
+      <w>54</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Create_account_page
+--
+- controller: CreateAccountPageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>482</y>
+      <w>54</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Create_group_page
+--
+- controller: CreateGroupPageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>802</x>
+      <y>482</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Enter_group_page
+--
+- controller: EnterGroupPageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>742</x>
+      <y>482</y>
+      <w>52</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Favorite_color_page
+--
+- controller: FavoriteColorPageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>980</x>
+      <y>482</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Group_page
+--
+- controller: GroupPageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>482</y>
+      <w>52</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Home_page_today
+--
+- controller: HomePageTodayController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>556</x>
+      <y>482</y>
+      <w>56</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Home_page_tomorrow
+--
+- controller: HomePageTomorrowController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>482</y>
+      <w>58</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Home_page_yesterday
+--
+- controller: HomePageYesterdayController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>316</x>
+      <y>482</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Nickname_page
+--
+- controller: NicknamePageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>682</x>
+      <y>482</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Participant_page
+--
+- controller: ParticipantPageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>482</y>
+      <w>58</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Profile_page
+--
+- controller: ProfilePageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>480</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Settings_page
+--
+- controller: SettingsPageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>442</x>
+      <y>482</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Task_page
+--
+- controller: TaskPageController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>802</x>
+      <y>432</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>EnterGroupPageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>1052</x>
+      <y>484</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>Login_page
+--
+- controller: LoginController
+--
++ build(context: BuildContext) : Widget</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>742</x>
+      <y>432</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>FavoriteColorPageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>858</x>
+      <y>432</y>
+      <w>54</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>CreateGroupPageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>920</x>
+      <y>432</y>
+      <w>54</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>CreateAccountPageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>980</x>
+      <y>432</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>GroupPageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>496</x>
+      <y>432</y>
+      <w>52</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>HomePageTodayController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>556</x>
+      <y>432</y>
+      <w>56</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>HomePageTomorrowController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>618</x>
+      <y>432</y>
+      <w>58</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>HomePageYesterdayController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>682</x>
+      <y>432</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>ParticipantPageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>316</x>
+      <y>432</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>NicknamePageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>256</x>
+      <y>432</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>SettingsPageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>378</x>
+      <y>432</y>
+      <w>58</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>ProfilePageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>442</x>
+      <y>432</y>
+      <w>50</w>
+      <h>22</h>
+    </coordinates>
+    <panel_attributes>TaskPageController
+--
+--
+métodos a definir</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>762</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>824</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>884</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>944</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>1002</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>582</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>646</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>704</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>278</x>
+      <y>452</y>
+      <w>6</w>
+      <h>32</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;140.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>464</x>
+      <y>452</y>
+      <w>6</w>
+      <h>34</h>
+    </coordinates>
+    <panel_attributes>lt=-</panel_attributes>
+    <additional_attributes>10.0;150.0;10.0;10.0</additional_attributes>
   </element>
 </diagram>
