@@ -1,8 +1,12 @@
 import 'dart:convert';
 
+import 'package:cloud_firestore/cloud_firestore.dart';
+// import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:tasking/controllers/db_firestore.dart';
 import 'package:tasking/models/usuario_tile.dart';
+import 'package:tasking/services/auth_service.dart';
 import 'package:tasking/widgets/custom_bottom_navigator.dart';
 import 'package:tasking/widgets/custom_tile.dart';
 import 'package:tasking/widgets/custom_top_navigator.dart';
@@ -16,6 +20,8 @@ class HomePageToday extends StatefulWidget {
 
 class _HomePageTodayState extends State<HomePageToday> {
   List<UsuarioTile> usuarios = [];
+  late FirebaseFirestore db;
+  late AuthService auth;
   int _numeroDeTarefas = 6;
 
   static List<UsuarioTile> getUser() {
@@ -72,9 +78,20 @@ class _HomePageTodayState extends State<HomePageToday> {
     return data.map<UsuarioTile>(UsuarioTile.fromJson).toList();
   }
 
+  _startFirebase() {
+    db = DbFirestore.get();
+  }
+
+  _testeFirebase() async {
+    await db.collection("teste/0987/teste").doc("usuarioTeste").set({
+      "valor_1": 1234,
+    });
+  }
+
   @override
   void initState() {
     usuarios = getUser();
+    _startFirebase();
     super.initState();
   }
 
@@ -147,7 +164,8 @@ class _HomePageTodayState extends State<HomePageToday> {
                                       horizontalPadding:
                                           ((MediaQuery.of(context).size.width) *
                                               0.027),
-                                      onPressedActivate: () {
+                                      onPressedActivate: () async {
+                                        await _testeFirebase();
                                         setState(() {
                                           _numeroDeTarefas -= 1;
                                         });

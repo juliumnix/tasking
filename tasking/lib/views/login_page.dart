@@ -1,3 +1,4 @@
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tasking/controllers/login_page_controller.dart';
@@ -19,7 +20,7 @@ class _LoginPageState extends State<LoginPage> {
   Widget build(BuildContext context) {
     return Scaffold(
         body: FutureBuilder(
-      future: _controller.initializeFirebase(),
+      future: Firebase.initializeApp(),
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           return SingleChildScrollView(
@@ -59,12 +60,12 @@ class _LoginPageState extends State<LoginPage> {
                       CustomButton(
                           title: "Entrar",
                           onClick: () {
-                            // _controller.signInUsingEmailPassword(
-                            //     email: _controller.usuario.getEmail(),
-                            //     password: _controller.usuario.getPassword(),
-                            //     context: context);
-                            Navigator.pushReplacementNamed(
-                                context, "/homePageToday");
+                            _controller.signInUsingEmailPassword(
+                                email: _controller.usuario.getEmail(),
+                                password: _controller.usuario.getPassword(),
+                                context: context);
+                            // Navigator.pushReplacementNamed(
+                            //     context, "/homePageToday");
                           }),
                       Container(
                           height: MediaQuery.of(context).size.height * 0.008),
