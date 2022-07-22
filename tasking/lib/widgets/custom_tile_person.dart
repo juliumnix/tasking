@@ -4,13 +4,11 @@ import 'package:tasking/widgets/custom_person_icon.dart';
 
 class CustomTilePerson extends StatefulWidget {
   final String title;
-  final String type;
   final String letter;
   final String hexCode;
   const CustomTilePerson(
       {Key? key,
       required this.title,
-      required this.type,
       required this.letter,
       required this.hexCode})
       : super(key: key);
@@ -62,20 +60,8 @@ class _CustomTilePersonState extends State<CustomTilePerson> {
                   widget.title,
                   overflow: TextOverflow.ellipsis,
                   style: TextStyle(
-                      fontSize: 16,
+                      fontSize: 18,
                       fontFamily: GoogleFonts.comfortaa().fontFamily),
-                ),
-                const Padding(padding: EdgeInsets.all(8.0)),
-                Row(
-                  children: [
-                    Text(
-                      widget.type,
-                      overflow: TextOverflow.ellipsis,
-                      style: TextStyle(
-                          fontFamily: GoogleFonts.comfortaa().fontFamily,
-                          fontSize: 16),
-                    ),
-                  ],
                 ),
               ],
             ),

@@ -38,6 +38,7 @@ class LoginController {
       );
       user = userCredential.user;
       print('Signed in: ${user?.email}');
+      Navigator.pushReplacementNamed(context, "/homePageToday");
     } on FirebaseAuthException catch (e) {
       if (e.code == 'user-not-found') {
         print('No user found for that email.');

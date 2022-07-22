@@ -35,7 +35,13 @@ class _TaskPageState extends State<TaskPage> {
                   Container(
                       child: Row(
                     children: [
-                      Icon(Icons.arrow_back_ios),
+                      GestureDetector(
+                        onTap: () {
+                          Navigator.pushReplacementNamed(
+                              context, "/homePageToday");
+                        },
+                        child: Icon(Icons.arrow_back_ios),
+                      ),
                       Container(
                         padding: EdgeInsets.only(
                           left: ((MediaQuery.of(context).size.width) * 0.047),
@@ -99,7 +105,6 @@ class _TaskPageState extends State<TaskPage> {
                         height: (MediaQuery.of(context).size.height) * 0.02),
                     CustomTilePerson(
                       title: 'Mateus Nosse',
-                      type: 'Administrador',
                       hexCode: 'FF0000',
                       letter: 'M',
                     ),

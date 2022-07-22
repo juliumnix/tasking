@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:tasking/controllers/create_account_controller.dart';
 
-import '../controllers/login_page_controller.dart';
 import '../widgets/custom_button.dart';
 import '../widgets/custom_input.dart';
 

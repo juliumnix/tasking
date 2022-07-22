@@ -126,7 +126,10 @@ class _HomePageTomorrowState extends State<HomePageTomorrow> {
                       child: Column(
                         children: [
                           GestureDetector(
-                            onTap: () {},
+                            onTap: () {
+                              Navigator.pushReplacementNamed(
+                                  context, "/createTask");
+                            },
                             child: Text(
                               "Criar tarefa",
                               style: TextStyle(

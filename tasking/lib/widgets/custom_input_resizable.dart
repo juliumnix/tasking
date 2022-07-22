@@ -7,7 +7,7 @@ class CustomInputResizable extends StatelessWidget {
   final int lines;
   final int maxLength;
   final bool enabled;
-  final Function(String value) setContent;
+  final Function(String value)? setContent;
   const CustomInputResizable(
       {Key? key,
       required this.maxLength,
@@ -15,7 +15,7 @@ class CustomInputResizable extends StatelessWidget {
       required this.title,
       required this.initialValue,
       required this.enabled,
-      required this.setContent})
+      this.setContent})
       : super(key: key);
 
   @override
@@ -29,7 +29,9 @@ class CustomInputResizable extends StatelessWidget {
         TextField(
           controller: TextEditingController(text: initialValue),
           onChanged: (value) {
-            setContent(value);
+            if (setContent != null) {
+              setContent!(value);
+            }
           },
           enabled: enabled,
           maxLength: maxLength,

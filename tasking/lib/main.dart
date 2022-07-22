@@ -16,7 +16,7 @@ import 'package:tasking/views/nickname_page.dart';
 import 'package:tasking/views/participant_page.dart';
 import 'package:tasking/views/profile_page.dart';
 import 'package:tasking/views/settings_page.dart';
-import 'package:tasking/views/task_page.dart';
+import 'package:tasking/views/create_task_page.dart';
 import 'package:tasking/views/teste_page.dart';
 
 void main() async {
@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.grey,
       ),
-      initialRoute: "/homePageToday",
+      initialRoute: "/",
       routes: {
         "/": (context) => const LoginPage(),
         "/teste": (context) => const TestePage(),
@@ -46,7 +46,7 @@ class MyApp extends StatelessWidget {
         "/settings": (context) => const SettingsPage(),
         "/nickname": (context) => const NicknamePage(),
         "/favoriteColor": (context) => const FavoriteColorPage(),
-        "/task": (context) => const TaskPage(),
+        "/createTask": (context) => const CreateTaskPage(),
         "/profile": (context) => const ProfilePage(),
         "/groupSelect": (context) => const GroupPage(),
         "/homePageToday": (context) => const HomePageToday(),

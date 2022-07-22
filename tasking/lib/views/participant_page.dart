@@ -1,8 +1,10 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:tasking/models/usuario_tile.dart';
+import 'package:tasking/controllers/db_firestore.dart';
+import 'package:tasking/models/usuario_firebase.dart';
 import 'package:tasking/widgets/custom_bottom_navigator.dart';
-import 'package:tasking/widgets/custom_tile.dart';
+import 'package:tasking/widgets/custom_tile_person.dart';
 
 class ParticipantPage extends StatefulWidget {
   const ParticipantPage({Key? key}) : super(key: key);
@@ -12,66 +14,42 @@ class ParticipantPage extends StatefulWidget {
 }
 
 class _ParticipantPageState extends State<ParticipantPage> {
-  List<UsuarioTile> usuarios = [];
-  int _numeroDeTarefas = 6;
+  late Future<List<UsuarioFirebase>> usuarios;
+  List<UsuarioFirebase> usuariosRemoverEssaLista =
+      metodoTesteRemoverJuntoComALista();
 
-  static List<UsuarioTile> getUser() {
-    const data = [
-      {
-        "id": 1,
-        "url": "https://picsum.photos/512/512",
-        "title": "Titulo 1",
-        "hours": 11.00
-      },
-      {
-        "id": 2,
-        "url": "https://picsum.photos/512/512",
-        "title": "Titulo 2",
-        "hours": 22.00
-      },
-      {
-        "id": 3,
-        "url": "https://picsum.photos/512/512",
-        "title": "Titulo 3",
-        "hours": 13.50
-      },
-      {
-        "id": 3,
-        "url": "https://picsum.photos/512/512",
-        "title": "Titulo 3",
-        "hours": 13.50
-      },
-      {
-        "id": 3,
-        "url": "https://picsum.photos/512/512",
-        "title": "Titulo 3",
-        "hours": 13.50
-      },
-      {
-        "id": 3,
-        "url": "https://picsum.photos/512/512",
-        "title": "Titulo 3",
-        "hours": 13.50
-      },
-      {
-        "id": 3,
-        "url": "https://picsum.photos/512/512",
-        "title": "Titulo 3",
-        "hours": 13.50
-      },
-      {
-        "id": 3,
-        "url": "https://picsum.photos/512/512",
-        "title": "Titulo 3",
-        "hours": 13.55
-      },
-    ];
-    return data.map<UsuarioTile>(UsuarioTile.fromJson).toList();
+  static List<UsuarioFirebase> metodoTesteRemoverJuntoComALista() {
+    List<UsuarioFirebase> usuarios = [];
+    final mateus = UsuarioFirebase(
+        apelido: "Mateus",
+        corFavorita: "F6FCBC",
+        codigo: "JMVZUUHB",
+        email: "mateus@gmail.com");
+    final julio = UsuarioFirebase(
+        apelido: "Julio",
+        corFavorita: "576839",
+        codigo: "JMVZUUHB",
+        email: "julio@gmail.com");
+    usuarios.add(mateus);
+    usuarios.add(julio);
+    return usuarios;
+  }
+
+  static Future<List<UsuarioFirebase>> getUsuarios() async {
+    FirebaseFirestore db = DbFirestore.get();
+    final user = db.collection("users");
+    final userSnap = await user.get();
+    final List<UsuarioFirebase> usuarios = [];
+    userSnap.docs.forEach((element) {
+      UsuarioFirebase.fromJson(element.data());
+    });
+    return usuarios;
   }
 
   @override
   void initState() {
-    usuarios = getUser();
+    usuarios = getUsuarios();
+    print(usuarios);
     super.initState();
   }
 
@@ -102,6 +80,8 @@ class _ParticipantPageState extends State<ParticipantPage> {
                   ),
                   Expanded(
                     child: Container(
+                      margin: EdgeInsets.only(
+                          top: (MediaQuery.of(context).size.height * 0.0120)),
                       decoration: BoxDecoration(
                         color: Colors.white,
                         borderRadius: BorderRadius.only(
@@ -123,47 +103,47 @@ class _ParticipantPageState extends State<ParticipantPage> {
                         removeTop: true,
                         child: Padding(
                           padding: EdgeInsets.only(
-                              top: ((MediaQuery.of(context).size.width) *
-                                  0.027)),
+                              top: ((MediaQuery.of(context).size.height) *
+                                  0.027),
+                              left: ((MediaQuery.of(context).size.width) *
+                                  0.0277),
+                              right: ((MediaQuery.of(context).size.width) *
+                                  0.0277)),
                           child: Column(
                             children: [
-                              Text(
-                                "6 participantes",
-                                style: TextStyle(
-                                    color: const Color(0xFFF4D745),
-                                    fontFamily:
-                                        GoogleFonts.comfortaa().fontFamily),
+                              Container(
+                                margin: EdgeInsets.only(
+                                    bottom:
+                                        (MediaQuery.of(context).size.height *
+                                            0.0201)),
+                                child: Text(
+                                  "${usuariosRemoverEssaLista.length} participantes",
+                                  style: TextStyle(
+                                      color: const Color(0xFFF4D745),
+                                      fontFamily:
+                                          GoogleFonts.comfortaa().fontFamily),
+                                ),
                               ),
                               Expanded(
                                 child: ListView.builder(
-                                  itemCount: usuarios.length,
+                                  itemCount: usuariosRemoverEssaLista.length,
                                   itemBuilder: (context, index) {
-                                    return CustomTile(
-                                        verticalPadding:
-                                            ((MediaQuery.of(context)
-                                                    .size
-                                                    .width) *
-                                                0.027),
-                                        horizontalPadding:
-                                            ((MediaQuery.of(context)
-                                                    .size
-                                                    .width) *
-                                                0.027),
-                                        onPressedActivate: () {
-                                          setState(() {
-                                            _numeroDeTarefas -= 1;
-                                          });
-                                        },
-                                        onPressedDesactivate: () {
-                                          setState(() {
-                                            _numeroDeTarefas =
-                                                _numeroDeTarefas + 1;
-                                          });
-                                        },
-                                        hasButton: false,
-                                        title: usuarios[index].title,
-                                        hours: usuarios[index].hours,
-                                        url: usuarios[index].url);
+                                    return Container(
+                                      margin: EdgeInsets.only(
+                                          top: (MediaQuery.of(context)
+                                                  .size
+                                                  .height *
+                                              0.0120)),
+                                      child: CustomTilePerson(
+                                          title: usuariosRemoverEssaLista[index]
+                                              .apelido!,
+                                          letter:
+                                              usuariosRemoverEssaLista[index]
+                                                  .apelido![0],
+                                          hexCode:
+                                              usuariosRemoverEssaLista[index]
+                                                  .corFavorita!),
+                                    );
                                   },
                                 ),
                               ),
